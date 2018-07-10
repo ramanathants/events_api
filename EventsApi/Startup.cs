@@ -1,4 +1,5 @@
-﻿using EventsApi.Models;
+﻿using AutoMapper;
+using EventsApi.Models;
 using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -68,6 +69,8 @@ namespace EventsApi
                     { "oauth2", new[] { "readAccess", "writeAccess" } }
                 });
             });
+
+            services.AddAutoMapper();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -31,9 +31,9 @@ namespace EventsApi
 
             base.Configure(app, env, loggerFactory, serviceProvider);
 
-            //var eventDbContext = serviceProvider.GetService<EventDbContext>();
-            //eventDbContext.Database.EnsureCreated();
-            //SeedData.Initialize(eventDbContext);
+            var eventDbContext = serviceProvider.GetService<EventDbContext>();
+            eventDbContext.Database.EnsureCreated();
+            SeedData.Initialize(eventDbContext);
         }
     }
 }
